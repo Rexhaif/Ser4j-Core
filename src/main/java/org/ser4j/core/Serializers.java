@@ -43,7 +43,7 @@ public class Serializers {
      * @param serializersMap serializers
      */
     public static void addAll(Map<String, Serializer> serializersMap) {
-        serializers.putAll(serializers);
+        serializers.putAll(serializersMap);
     }
 
     /**
