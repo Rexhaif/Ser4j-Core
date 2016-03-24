@@ -17,6 +17,7 @@ public class Serializers {
      */
     static {
         addSerializer("jdk/serialization", new JdkSerializer());
+        addSerializer("jdk/serialization/ignore_error", new JdkSerializer((t -> {})));
     }
 
     /**
@@ -39,9 +40,9 @@ public class Serializers {
 
     /**
      * Imports serializers from map
-     * @param serializers serializers
+     * @param serializersMap serializers
      */
-    public static void addAll(Map<String, Serializer> serializers) {
+    public static void addAll(Map<String, Serializer> serializersMap) {
         serializers.putAll(serializers);
     }
 
