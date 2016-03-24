@@ -1,5 +1,7 @@
 package org.ser4j.core;
 
+import org.ser4j.core.impl.serializer.JdkSerializer;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,6 +11,13 @@ import java.util.Map;
 public class Serializers {
 
     private static Map<String, Serializer> serializers = new HashMap<>();
+
+    /**
+     * Statically add available serializers
+     */
+    static {
+        addSerializer("jdk/serialization", new JdkSerializer());
+    }
 
     /**
      * Finds and retrieves serializer for given name
